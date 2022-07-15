@@ -5,19 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>STORE NFT</title>
 </head>
 
 <body>
+
+    <div id="navbar" class="container-fluid m-0 p-0">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container">
+            <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+            </a>
+            </div>
+        </nav>
+    </div>
+
     <div class="container">
-        <h1>Carrito</h1>
-        <hr>
-        <div id="items" class="row"> <!--luego aqui va a ir mi CARD-->
+        <section>
+        <h1 class="text-center mb-4">¿Que son los NFT y cómo funcionan?</h1>
+        <h2>Primero, qué son los bienes no fungibles</h2>
+        <p>Para empezar a entender el concepto de los NFT, primero tenemos que saber y entender que en nuestro sistema jurídico, existen bienes fungibles y bienes no fungibles. Los bienes fungibles son los que pueden intercambiarse, teniendo un valor en función de su número, medida o peso. Y los bienes no fungibles son los que no son sustituibles.</p>
+        <p> <b>Un ejemplo de bienes fungibles es el dinero.</b> Si tienes un billete de 20 euros, este es un bien fungible, ya que lo puedes intercambiar sin problemas por otro billete de 20 euros, no pierde valor y es exactamente igual. Además, este billete se consume cuando lo utilizas.</p>
+        <p> Y por otra parte, <b>un ejemplo de bien no fungible sería una obra de arte. </b> Si tienes un cuadro en casa, este no se consume al utilizarse y tampoco puede ser sustituido por otro cuadro. Una obra de arte no es equivalente a otra, y por lo tanto, no se pueden simplemente intercambiar como pasa con un billete de 20 euros.</p>
 
-        </div>
+        <h2>¿Qué son los NFT?</h2>
+        <p>Las siglas de <b>NFT</b> significan <b>Non -Fungible Token</b>, un token no fungible. Los tokens son unidades de valor que se le asignan a un modelo de negocio, como por ejemplo el de las criptomonedas. Y es que los NFT tienen una relación estrecha con las criptomonedas, por lo menos tecnológicamente, aunque son opuestos, ya que un Bitcoin es un bien fungible, y un NFT es un bien no fungible, pero en esencia, son como las dos caras de una moneda tecnológica.</p>
+        <p>Para que lo entiendas bien, podemos pensar en las criptomonedas como una reserva de valor, algo parecido al oro. Puedes comprar y vender oro, y cuando el número de compradores aumenta el precio sube, para bajar cuando este número de compradores disminuye. Es un comportamiento igual al de las criptomonedas.</p>
+        <p>Pero el oro al final es oro, y puedes cambiar una pepita por otra sin problema. Sin embargo, hay otros bienes hechos en oro que tienen también un valor, pero son únicos, y ese hecho marca la diferencia y les da otro tipo de valor. Al igual que ese valor hecho con oro o una obra de arte, los NFT son activos únicos que no se pueden modificar ni intercambiar por otro que tenga el mismo valor, ya que no hay dos NFT que sean equivalentes igual que no hay dos cuadros que lo sean.</p>
+        <p>Por lo tanto, puedes pensar en un <b>NFT</b> como una <b>gran obra de arte</b>, como la Gioconda de Da Vinci. <b>Solo hay una y está en una galería de arte concreta. Si la quieres, solo puedes comprar la original en el caso de que estuviera a la venta.</b>  También podrías hacerte con una copia, pero tendría otro valor, ya que no sería la original. Pues eso exactamente es lo que hace el NFT, pero de <b>forma digital.</b></p>
+        
+        <h2>¿Cómo funcionan los NFT?</h2>
+        <p>Los NFT funcionan a <b>través de la tecnología blockchain</b> o de cadena de bloques donde se les asigna una especie de certificado digital de autenticidad, una serie de metadatos que no se van a poder modificar. En estos metadatos se garantiza su autenticidad, se registra el valor de partida y todas las adquisiciones o transacciones que se hayan hecho, y también a su autor.</p>
+        <p>Esto quiere decir que si compras un contenido digital tokenizado con NFT, en todo momento siempre habrá constancia del primer valor que tenía, y de por cuánto lo has comprado. Es como cuando compras un cuadro y se lleva un registro de por dónde se mueve.</p>
+    </section>
+        
 
+
+        <h2 class="text-center">STOCK</h2>
         <hr>
-        <p class="text-center">&copy 2022 Kev</p>
+        <div id="items" class="row"></div> <!--luego aqui va a ir mi CARD-->
+        <hr>
+
+        <footer id="footer">
+            <p class="text-center text-light">&copy 2022 Kev</p>
+        </footer>
     </div>
 
     <!-- CARD -->
