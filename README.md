@@ -14,5 +14,4 @@ Los NFT funcionan a través de la tecnología blockchain o de cadena de bloques 
 
 Esto quiere decir que si compras un contenido digital tokenizado con NFT, en todo momento siempre habrá constancia del primer valor que tenía, y de por cuánto lo has comprado. Es como cuando compras un cuadro y se lleva un registro de por dónde se mueve.
 
-![Logo](h.png)
 ![Captura de pantalla 2022-07-15 201931](https://user-images.githubusercontent.com/93633438/179323518-c232f68a-ff6f-403b-a494-2a1d751568b2.png)
