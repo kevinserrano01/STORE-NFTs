@@ -1,5 +1,9 @@
+const cards = document.getElementById('cards')
 const items = document.getElementById('items')
+const footer = document.getElementById('footer')
 const templateCard = document.getElementById('template-card').content
+const templateFooter = document.getElementById('template-footer')
+const templateCarrito = document.getElementById('template-carrito')
 const fragment = document.createDocumentFragment() //es como una memoria bolatil, se disuelve
 let carrito = {} //creamos un objeto vacio
 
@@ -9,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // delegar con Event Delegation al hacer click en una card, agregarlo al carrito==============================>
-items.addEventListener('click', e => {
+cards.addEventListener('click', e => {
     addCarrito(e)
 })
 
@@ -37,7 +41,7 @@ const pintarCard = data => {
         const clone = templateCard.cloneNode(true) //clonamos todos los objetos ya guardados en sus respectivas etiquetas
         fragment.appendChild(clone) //lo que tengo guardado en clone subirlo a fragment
     });
-    items.appendChild(fragment) //ocupamos items para mandar el fragment y evitar reflow
+    cards.appendChild(fragment) //ocupamos cards para mandar el fragment y evitar reflow
 }
 
 // funcion flecha para agregar productos al carrito =========================================>
@@ -48,7 +52,7 @@ const addCarrito = e => {
     if (e.target.classList.contains('btn-dark')) { //si cuando le demos click a algun elemento o boton coincida con la clase que le pasamos hacer lo siguiente...
         setCarrito(e.target.parentElement) //me trae todo el contenido de card ya se su: (title, precio, id, y  boton) y empujamos todo a setCarrito
     }
-    e.stopPropagation() //detener cualquier otro evento que se puede generar en nuestro items
+    e.stopPropagation() //detener cualquier otro evento que se puede generar en nuestras cards
 }
 
 //manipula nuestro carrito ========================>
@@ -64,6 +68,19 @@ const setCarrito = objeto => {
         producto.cantidad = carrito[producto.id].cantidad+1
     }
     carrito[producto.id] = {...producto} //empujar copia de producto a nuestro carrito | (...):es como una copia de producto
-    
+    pintarCarrito()
+}
+
+const pintarCarrito = () => {
     console.log(carrito)
+    Object.values(carrito).forEach(producto => {
+        templateCarrito.querySelector('th').textContent = producto.id
+        templateCarrito.querySelectorAll('td')[0].textContent = producto.cantidad
+        templateCarrito.querySelector('.btn-info').dataset.id = producto.id //boton aumentar cantidad
+        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id //boton remover cantidad
+        templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio //cuando aumente la cantidad le multiplicamos el precio
+
+        const clone = templateCarrito.cloneNode(true)
+        fragment.appendChild(clone)
+    })
 }
