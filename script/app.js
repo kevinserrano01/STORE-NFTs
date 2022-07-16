@@ -8,6 +8,8 @@ const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment() //es como una memoria bolatil, se disuelve
 let carrito = {} //creamos un objeto vacio
 
+
+
 // una vez que se cargue nuestro sitio web y se carguen los productos ... ===================>
 document.addEventListener('DOMContentLoaded', () => { 
     fetchData() //llamamos a nuestro fetchData
@@ -17,14 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
+
 // delegar con Event Delegation al hacer click en una card, agregarlo al carrito==============================>
 cards.addEventListener('click', e => {
     addCarrito(e)
 })
 
+
 items.addEventListener('click', e => {
     btnAccion(e)
 })
+
 
 // accedemos a los datos del archivo json ===================>
 const fetchData = async () => {
@@ -32,6 +37,8 @@ const fetchData = async () => {
         const data = await res.json()
         pintarCard(data)
 }
+
+
 
 //pintar cards ===================>
 const pintarCard = data => { 
@@ -47,6 +54,8 @@ const pintarCard = data => {
     cards.appendChild(fragment) //ocupamos cards para mandar el fragment y evitar reflow
 }
 
+
+
 // funcion flecha para agregar productos al carrito =========================================>
 const addCarrito = e => {
     //console.log(e.target) //target es pora ver lo que estoy seleccionando con un click en formato html
@@ -57,6 +66,8 @@ const addCarrito = e => {
     }
     e.stopPropagation() //detener cualquier otro evento que se puede generar en nuestras cards
 }
+
+
 
 //manipula nuestro carrito ========================>
 const setCarrito = objeto => {
@@ -73,6 +84,8 @@ const setCarrito = objeto => {
     carrito[producto.id] = {...producto} //empujar copia de producto a nuestro carrito | (...):es como una copia de producto
     pintarCarrito()
 }
+
+
 
 const pintarCarrito = () => {
     items.innerHTML = '' //limpiar el html para que no se repitan los productos en el carrito
@@ -97,6 +110,8 @@ const pintarCarrito = () => {
     // vamos a guardar en el almecenamiento Local (localStorage) con la key 'carrito  todo lo que venga de carrito 
     localStorage.setItem('carrito', JSON.stringify(carrito)) //stringify es para pasar nuestra coleccion de objetos a un string plano y vicebersa 
 }
+
+
 
 const pintarFooter = () => {
     footer.innerHTML = '' //limpiamos el footer
@@ -125,6 +140,8 @@ const pintarFooter = () => {
     })
 }
 
+
+
 const btnAccion = e => {
     // console.log(e.target) //para detectar que parte estamso haciendo click del html
 
@@ -150,3 +167,5 @@ const btnAccion = e => {
 
     e.stopPropagation() //detener cualquier otro evento que se puede generar en nuestros ifs
 }
+
+// end
